@@ -5,6 +5,8 @@ import UIKit
 
 /*
  
+ Roberto Carrasco.
+ 
  Tienes que generar una serie de números de 100 números, del 0 al 100, tienes que incluir el 100. Y
  cada vez que imprimas ese número tienes que decidir cómo lo imprimes de acuerdo a las siguientes
  cuatro reglas. Si el número es divisible entre cinco, debes de imprimir el número y la palabra Bingo.
