@@ -29,9 +29,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU9-XH-fbr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU9-XH-fbr">
                                 <frame key="frameInset" minX="86" minY="216" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Quiero una hamburguesa!!!"/>
                                 <connections>
                                     <action selector="presionoBoton" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1B-ZK-x7l"/>
@@ -41,8 +40,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OXw-wF-kyR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="88" id="7a4-Tu-8A1"/>
+                            <constraint firstItem="NU9-XH-fbr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="196" id="OgX-P9-oHW"/>
                             <constraint firstItem="OXw-wF-kyR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="155" id="caX-qt-Unf"/>
                             <constraint firstItem="kDR-HU-RwT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="118" id="i0U-tq-yu1"/>
+                            <constraint firstItem="NU9-XH-fbr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="iWZ-Rh-ASf"/>
                             <constraint firstItem="kDR-HU-RwT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="126" id="rus-te-MTM"/>
                         </constraints>
                     </view>
