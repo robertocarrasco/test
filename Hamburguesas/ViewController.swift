@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         UILabelHamburguesa.text = claseHamburguesas.obtenHamburguesa()
         view.backgroundColor = colores.dameColor()
     }
-    
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
