@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2B44F211D4227E200266F11 /* hamburguesas.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = hamburguesas.playground; sourceTree = "<group>"; };
 		B2C9CA151D411D4200C13F8A /* Hamburguesas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamburguesas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C9CA181D411D4300C13F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C9CA1A1D411D4300C13F8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 				B2C9CA211D411D4300C13F8A /* LaunchScreen.storyboard */,
 				B2C9CA241D411D4300C13F8A /* Info.plist */,
 				B2C9CA2A1D411D7E00C13F8A /* Datos.swift */,
+				B2B44F211D4227E200266F11 /* hamburguesas.playground */,
 			);
 			path = Hamburguesas;
 			sourceTree = "<group>";
