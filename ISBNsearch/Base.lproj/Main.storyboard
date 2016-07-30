@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1mk-od-3K9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ISBNsearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buscar ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fo-FNN">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXj-LJ-Jty">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="iEn-sB-HGM"/>
+                                </constraints>
+                                <state key="normal" title="Enviar"/>
+                                <connections>
+                                    <segue destination="o55-lJ-Tu1" kind="show" id="4G4-pT-1oz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe el ISBN..." borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-BF-GLf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="34m-vY-L6b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="webSearch"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eMi-fo-FNN" firstAttribute="centerX" secondItem="iXj-LJ-Jty" secondAttribute="centerX" id="Deg-dl-hLq"/>
+                            <constraint firstItem="eMi-fo-FNN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="EGl-oD-Bu0"/>
+                            <constraint firstItem="Fue-BF-GLf" firstAttribute="top" secondItem="eMi-fo-FNN" secondAttribute="bottom" constant="21" id="c9H-tx-RsU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fue-BF-GLf" secondAttribute="trailing" constant="77" id="nqT-C6-Xm8"/>
+                            <constraint firstItem="eMi-fo-FNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6O-VY-1Kl"/>
+                            <constraint firstItem="iXj-LJ-Jty" firstAttribute="top" secondItem="Fue-BF-GLf" secondAttribute="bottom" constant="34" id="wZt-S2-AG1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aB3-gj-BvG"/>
+                    <connections>
+                        <outlet property="codigoISBN" destination="Fue-BF-GLf" id="RGR-bu-r7D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1034.4000000000001" y="34.632683658170919"/>
+        </scene>
+        <!--Vista Resultados-->
+        <scene sceneID="A4N-Yi-EBV">
+            <objects>
+                <viewController id="o55-lJ-Tu1" customClass="vistaResultados" customModule="ISBNsearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cs9-Sh-VEu"/>
+                        <viewControllerLayoutGuide type="bottom" id="kix-iq-H59"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IhE-a0-TSy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P5o-7z-PIW">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P5o-7z-PIW" firstAttribute="leading" secondItem="IhE-a0-TSy" secondAttribute="leadingMargin" constant="33" id="1iO-Ln-3c7"/>
+                            <constraint firstItem="kix-iq-H59" firstAttribute="top" secondItem="P5o-7z-PIW" secondAttribute="bottom" constant="157" id="INJ-RW-fUQ"/>
+                            <constraint firstItem="P5o-7z-PIW" firstAttribute="top" secondItem="Cs9-Sh-VEu" secondAttribute="bottom" constant="49" id="Rd5-yT-i1b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P5o-7z-PIW" secondAttribute="trailing" constant="25" id="eGE-sN-2Sq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultadoConsulta" destination="P5o-7z-PIW" id="3wu-TK-52A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSv-de-xQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898.4000000000001" y="-82.3088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m0x-3U-vmP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1mk-od-3K9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O3x-TN-1fN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tkf-eg-ods"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ol5-fx-3i5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.200000000000003" y="34.632683658170919"/>
         </scene>
     </scenes>
 </document>
