@@ -9,10 +9,14 @@
 import UIKit
 import SystemConfiguration
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var codigoISBN: UITextField!
     var respuestaServidor : String = ""
+    var tituloJSON : String = ""
+    var autoresJSON : String = ""
+    var portadaJSON : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class ViewController: UIViewController {
         let sigVista = segue.destinationViewController as! vistaResultados
         busquedaSincrona()
         sigVista.respuesta = respuestaServidor
+        sigVista.tituloRespuesta = tituloJSON
+        sigVista.autoresRespuesta = autoresJSON
+        sigVista.portadaRespuesta = portadaJSON
         
     }
     
@@ -78,6 +85,21 @@ class ViewController: UIViewController {
             let datos:NSData? = NSData(contentsOf: url! as URL)
             let texto = NSString(data:datos! as Data, encoding: String.Encoding.utf8.rawValue)
             respuestaServidor = texto! as String
+            
+            do {
+                
+                let json = try JSONSerialization.jsonObject(with: datos! as Data, options: JSONSerialization.ReadingOptions.mutableLeaves)
+                let dico1 = json as! NSDictionary
+                let dico2 = dico1["ISBN:9788437604947"] as! NSDictionary
+                self.tituloJSON = dico2["title"] as! NSString as String
+                let dico3 = dico2["authors"] as! NSArray
+                self.autoresJSON = dico3[0]["name"] as! NSString as String
+                //No existe portada.
+                self.portadaJSON = "No existe el tag"
+            } catch _ {
+                print ("Error")
+            }
+ 
         }
     }
 
